@@ -1,0 +1,69 @@
+@import url(../styles/reset.css);
+.container {
+  display: grid;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 2fr 2fr;
+  grid-template-areas:
+    "header header header header"
+    "sidebar main blog1 ads"
+    "sidebar main blog2 ads";
+  grid-gap: 12px;
+}
+
+.header {
+  background-color: aqua;
+  border-radius: 10px;
+  grid-area: header;
+}
+.sidebar {
+  background: blue;
+  border-radius: 10px;
+  grid-area: sidebar;
+  margin-left: 24px;
+}
+
+.main {
+  background: blueviolet;
+  border-radius: 10px;
+  grid-area: main;
+}
+
+.blog1 {
+  background: brown;
+  border-radius: 10px;
+  grid-area: blog1;
+}
+
+.blog2 {
+  background: cadetblue;
+  border-radius: 10px;
+  grid-area: blog2;
+}
+
+.ads {
+  background: chartreuse;
+  border-radius: 10px;
+  grid-area: ads;
+  margin-right: 24px;
+}
+
+/* Media */
+
+@media (max-width: 545px) {
+  .container {
+    grid-gap: 12px;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 0.5fr 2fr 1.5fr 1fr ;
+    grid-template-areas:
+      "header header header"
+      "sidebar main main"
+      "blog1 blog1  blog2"
+      "ads ads ads";
+  }
+  .sidebar,
+  .ads{
+    margin: 0;
+  }
+}
